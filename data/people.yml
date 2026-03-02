@@ -26,3 +26,7 @@ people:
   - id: mia_sanchez
     name: "Mía Sánchez"
     image: "./assets/people/mia_sanchez.png"
+
+  - id: carlos_bahamon
+    name: "Carlos Bahamón"
+    image: "./assets/people/carlos_bahamon.jpeg"
