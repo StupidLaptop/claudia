@@ -18,3 +18,11 @@ people:
   - id: natalia_torres
     name: "Natalia Torres"
     image: "./assets/people/natalia_torres.jpeg"
+  
+  - id: lucia_sanchez
+    name: "Lucía Sánchez"
+    image: "./assets/people/lucia_sanchez.png"
+  
+  - id: mia_sanchez
+    name: "Mía Sánchez"
+    image: "./assets/people/mia_sanchez.png"
