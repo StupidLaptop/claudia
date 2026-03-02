@@ -8,6 +8,7 @@ const nextBtn = document.getElementById("next-btn");
 const levelEl = document.getElementById("level");
 const scoreEl = document.getElementById("score");
 const correctEl = document.getElementById("correct");
+const streakEl = document.getElementById("streak");
 const cardEl = document.getElementById("card");
 const confettiCanvas = document.getElementById("confetti-canvas");
 
@@ -18,11 +19,14 @@ const state = {
   answered: false,
   score: 0,
   correct: 0,
+  streak: 0,
   level: 1,
   lastPersonId: null,
 };
 
 let audioCtx;
+let introPlayed = false;
+const introMessage = "¡Hola, Claudia! Adivina quiénes son estas personas de nuestra familia.";
 
 function parsePeopleYAML(yamlText) {
   const lines = yamlText
@@ -112,6 +116,14 @@ function speakText(text) {
   window.speechSynthesis.speak(utterance);
 }
 
+function playIntroOnce() {
+  if (introPlayed) {
+    return;
+  }
+  introPlayed = true;
+  speakText(introMessage);
+}
+
 function ensureAudioContext() {
   if (!audioCtx) {
     audioCtx = new window.AudioContext();
@@ -148,12 +160,19 @@ function playMildErrorSound() {
   playTone({ frequency: 220, duration: 0.16, type: "sine", gain: 0.045 });
 }
 
-function triggerConfetti() {
+function playStreakSound() {
+  playTone({ frequency: 523.25, duration: 0.14, type: "square", gain: 0.085 });
+  setTimeout(() => playTone({ frequency: 659.25, duration: 0.14, type: "square", gain: 0.085 }), 110);
+  setTimeout(() => playTone({ frequency: 783.99, duration: 0.16, type: "square", gain: 0.09 }), 220);
+  setTimeout(() => playTone({ frequency: 1046.5, duration: 0.26, type: "triangle", gain: 0.11 }), 320);
+}
+
+function triggerConfetti({ particleCount = 120, frames = 90 } = {}) {
   const ctx = confettiCanvas.getContext("2d");
   confettiCanvas.width = window.innerWidth;
   confettiCanvas.height = window.innerHeight;
 
-  const particles = Array.from({ length: 120 }, () => ({
+  const particles = Array.from({ length: particleCount }, () => ({
     x: window.innerWidth / 2 + (Math.random() - 0.5) * 120,
     y: window.innerHeight * 0.23 + (Math.random() - 0.5) * 30,
     vx: (Math.random() - 0.5) * 8,
@@ -181,7 +200,7 @@ function triggerConfetti() {
     });
 
     frame += 1;
-    if (frame < 90) {
+    if (frame < frames) {
       requestAnimationFrame(draw);
     } else {
       ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
@@ -191,11 +210,20 @@ function triggerConfetti() {
   requestAnimationFrame(draw);
 }
 
+function triggerStreakCelebration() {
+  cardEl.classList.remove("party");
+  void cardEl.offsetWidth;
+  cardEl.classList.add("party");
+  triggerConfetti({ particleCount: 240, frames: 120 });
+  playStreakSound();
+}
+
 function updateStats() {
   state.level = Math.floor(state.correct / 5) + 1;
   levelEl.textContent = String(state.level);
   scoreEl.textContent = String(state.score);
   correctEl.textContent = String(state.correct);
+  streakEl.textContent = String(state.streak);
 }
 
 function setFeedback(message, tone) {
@@ -227,15 +255,23 @@ function onAnswer(person) {
 
   if (isCorrect) {
     state.correct += 1;
+    state.streak += 1;
     state.score += 10 + (state.level - 1) * 2;
     updateStats();
-    setFeedback("Muy bien. Respuesta correcta.", "correct");
-    triggerConfetti();
-    playSuccessSound();
-    speakText(`Excelente. Es ${state.currentPerson.name}.`);
+    if (state.streak % 5 === 0) {
+      setFeedback(`Increíble. Llevas ${state.streak} seguidas.`, "correct");
+      triggerStreakCelebration();
+      speakText(`Fantástico. ${state.streak} respuestas correctas seguidas.`);
+    } else {
+      setFeedback("Muy bien. Respuesta correcta.", "correct");
+      triggerConfetti();
+      playSuccessSound();
+      speakText(`Excelente. Es ${state.currentPerson.name}.`);
+    }
     return;
   }
 
+  state.streak = 0;
   state.score = Math.max(0, state.score - 2);
   updateStats();
   setFeedback(`Casi. La respuesta correcta es ${state.currentPerson.name}.`, "incorrect");
@@ -305,6 +341,9 @@ async function init() {
     state.people = await loadPeople();
     renderQuestion();
     updateStats();
+    setTimeout(() => {
+      playIntroOnce();
+    }, 450);
   } catch (err) {
     console.error(err);
     setFeedback(`Error: ${err.message}`, "incorrect");
@@ -320,5 +359,13 @@ window.addEventListener("resize", () => {
   confettiCanvas.width = window.innerWidth;
   confettiCanvas.height = window.innerHeight;
 });
+
+window.addEventListener(
+  "pointerdown",
+  () => {
+    playIntroOnce();
+  },
+  { once: true }
+);
 
 init();

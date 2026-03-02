@@ -65,7 +65,7 @@ body {
 
 .hud {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem;
   margin-bottom: 0.8rem;
 }
@@ -91,6 +91,10 @@ body {
   transform: rotate(-0.7deg);
 }
 
+.stat:nth-child(4) {
+  transform: rotate(1.1deg);
+}
+
 .label {
   display: block;
   color: var(--soft-ink);
@@ -100,7 +104,8 @@ body {
 
 #level,
 #score,
-#correct {
+#correct,
+#streak {
   font-size: 1.32rem;
   font-weight: 800;
 }
@@ -258,6 +263,10 @@ body {
   animation: shake 280ms linear;
 }
 
+.card.party {
+  animation: party-bounce 560ms ease;
+}
+
 .help {
   margin-top: 0.85rem;
   color: var(--soft-ink);
@@ -272,6 +281,13 @@ body {
   50% { transform: translateX(6px); }
   75% { transform: translateX(-4px); }
   100% { transform: translateX(0); }
+}
+
+@keyframes party-bounce {
+  0% { transform: scale(1) rotate(0deg); }
+  35% { transform: scale(1.03) rotate(-0.8deg); }
+  70% { transform: scale(1.03) rotate(0.8deg); }
+  100% { transform: scale(1) rotate(0deg); }
 }
 
 @media (max-width: 560px) {
