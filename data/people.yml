@@ -30,3 +30,19 @@ people:
   - id: carlos_bahamon
     name: "Carlos Bahamón"
     image: "./assets/people/carlos_bahamon.jpeg"
+  
+  - id: mark_sanchez
+    name: "Mark Sánchez"
+    image: "./assets/people/mark_sanchez.png"
+  
+  - id: matias_sanchez
+    name: "Matías Sánchez"
+    image: "./assets/people/matias_sanchez.jpeg"
+  
+  - id: amalia_sanchez
+    name: "Amalia Sánchez"
+    image: "./assets/people/amalia_sanchez.png"
+  
+  - id: mary_haugen
+    name: "Mary Haugen"
+    image: ",/assets/people/mary_haugen.png"
