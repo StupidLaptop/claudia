@@ -57,4 +57,4 @@ people:
   
   - id: mary_haugen
     name: "Mary Haugen"
-    image: ",/assets/people/mary_haugen.png"
+    image: "./assets/people/mary_haugen.png"
