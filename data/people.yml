@@ -31,6 +31,18 @@ people:
     name: "Carlos Bahamón"
     image: "./assets/people/carlos_bahamon.jpeg"
   
+  - id: sandra_torres
+    name: "Sandra Torres"
+    image: "./assets/people/sandra_torres.jpeg"
+
+  - id: juan_sebastian_bahamon
+    name: "Juan Sebastián Bahamón"
+    image: "./assets/people/juan_sebastian_bahamon.jpeg"
+
+  - id: sara_lucia_bahamon
+    name: "Sara Lucía Bahamón"
+    image: "./assets/people/sara_lucia_bahamon.jpeg"
+  
   - id: mark_sanchez
     name: "Mark Sánchez"
     image: "./assets/people/mark_sanchez.png"
