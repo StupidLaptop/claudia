@@ -1,0 +1,20 @@
+people:
+  - id: cesar_bahamon
+    name: "César Bahamón"
+    image: "./assets/people/cesar_bahamon.jpeg"
+
+  - id: diego_bocanegra
+    name: "Diego Bocanegra"
+    image: "./assets/people/diego_bocanegra.jpeg"
+
+  - id: maria_alejandra_bahamon
+    name: "María Alejandra Bahamón"
+    image: "./assets/people/maria_alejandra_bahamon.jpeg"
+
+  - id: michael_sanchez
+    name: "Michael Sánchez"
+    image: "./assets/people/michael_sanchez.jpeg"
+
+  - id: natalia_torres
+    name: "Natalia Torres"
+    image: "./assets/people/natalia_torres.jpeg"

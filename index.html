@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Memoria Familiar</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <main class="app" aria-live="polite">
+      <header class="app-header">
+        <h1>Juego de Memoria Familiar</h1>
+        <p>¡Hola, Claudia!</p>
+        <p>¡Adivina quién es esta persona!</p>
+      </header>
+
+      <section class="hud" aria-label="Puntuación">
+        <div class="stat">
+          <span class="label">Nivel</span>
+          <span id="level">1</span>
+        </div>
+        <div class="stat">
+          <span class="label">Puntos</span>
+          <span id="score">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Aciertos</span>
+          <span id="correct">0</span>
+        </div>
+      </section>
+
+      <section class="card" id="card">
+        <img id="person-image" src="" alt="Foto de familiar" />
+
+        <div id="options" class="options" role="group" aria-label="Opciones de nombre"></div>
+
+        <p id="feedback" class="feedback" role="status"></p>
+
+        <div class="controls">
+          <button id="next-btn" class="next-btn" type="button">Siguiente</button>
+        </div>
+      </section>
+
+      <section class="help">
+        <p>
+          Autor: Diego Bocanegra
+        </p>
+      </section>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
