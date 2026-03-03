@@ -3,10 +3,6 @@ people:
     name: "César Bahamón"
     image: "./assets/people/cesar_bahamon.jpeg"
 
-  - id: diego_bocanegra
-    name: "Diego Bocanegra"
-    image: "./assets/people/diego_bocanegra.jpeg"
-
   - id: maria_alejandra_bahamon
     name: "María Alejandra Bahamón"
     image: "./assets/people/maria_alejandra_bahamon.jpeg"
@@ -42,6 +38,18 @@ people:
   - id: sara_lucia_bahamon
     name: "Sara Lucía Bahamón"
     image: "./assets/people/sara_lucia_bahamon.jpeg"
+
+  - id: noah_bahamon
+    name: "Noah Bahamón"
+    image: "./assets/people/noah_bahamon.jpeg"
+
+  - id: angel_bahamon
+    name: "Ángel Bahamón"
+    image: "./assets/people/angel_bahamon.jpeg"
+
+  - id: santiago_bahamon
+    name: "Santiago Bahamón"
+    image: "./assets/people/santiago_bahamon.jpeg"
   
   - id: mark_sanchez
     name: "Mark Sánchez"
@@ -58,3 +66,25 @@ people:
   - id: mary_haugen
     name: "Mary Haugen"
     image: "./assets/people/mary_haugen.png"
+  
+  - id: luis_alberto_bocanegra
+    name: "Luis Alberto Bocanegra"
+    image: "./assets/people/luis_alberto_bocanegra.jpeg"
+
+  - id: angela_ines_bahamon
+    name: "Ángela Inés Bahamón"
+    image: "./assets/people/angela_ines_bahamon.jpeg"
+
+  - id: diego_bocanegra
+    name: "Diego Bocanegra"
+    image: "./assets/people/diego_bocanegra.jpeg"
+  
+  - id: magdalena_ehnes
+    name: "Magdalena Ehnes"
+    image: "./assets/people/magdalena_ehnes.jpeg"
+    
+  - id: maria_paula_bahamon
+    name: "Maria Paula Bahamón"
+    image: "./assets/people/maria_paula_bahamon.jpeg"
+  
+  
