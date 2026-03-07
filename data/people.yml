@@ -75,6 +75,18 @@ people:
     name: "Ángela Inés Bahamón"
     image: "./assets/people/angela_ines_bahamon.jpeg"
 
+  - id: angela_maria_bocanegra
+    name: "Ángela María Bocanegra"
+    image: "./assets/people/angela_maria_bocanegra.jpeg"
+
+  - id: martin_lopez
+    name: "Martín López"
+    image: "./assets/people/martin_lopez.jpeg"
+
+  - id: esteban_lopez
+    name: "Esteban López"
+    image: "./assets/people/esteban_lopez.jpeg"
+
   - id: diego_bocanegra
     name: "Diego Bocanegra"
     image: "./assets/people/diego_bocanegra.jpeg"
@@ -83,8 +95,16 @@ people:
     name: "Magdalena Ehnes"
     image: "./assets/people/magdalena_ehnes.jpeg"
     
+  - id: pedro_bahamon
+    name: "Pedro Bahamón"
+    image: "./assets/people/pedro_bahamon.jpeg"
+
   - id: maria_paula_bahamon
     name: "Maria Paula Bahamón"
     image: "./assets/people/maria_paula_bahamon.jpeg"
+
+  - id: claudia_bahamon
+    name: "Claudia Bahamón"
+    image: "./assets/people/claudia_bahamon.jpeg"
   
   
