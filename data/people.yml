@@ -94,6 +94,14 @@ people:
   - id: magdalena_ehnes
     name: "Magdalena Ehnes"
     image: "./assets/people/magdalena_ehnes.jpeg"
+  
+  - id: empanada_bocanegra
+    name: "Empanada Bocanegra"
+    image: "./assets/people/empanada_bocanegra.jpeg"
+
+  - id: marianito_bocanegra
+    name: "Marianito Bocanegra"
+    image: "./assets/people/marianito_bocanegra.jpeg"
     
   - id: pedro_bahamon
     name: "Pedro Bahamón"
