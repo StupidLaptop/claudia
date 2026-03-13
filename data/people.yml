@@ -7,6 +7,14 @@ people:
     name: "María Alejandra Bahamón"
     image: "./assets/people/maria_alejandra_bahamon.jpeg"
 
+  - id: rommel_nelson_sanchez
+    name: "Rommel Nelson Sánchez"
+    image: "./assets/people/rommel_nelson_sanchez.jpeg"
+  
+  - id: gloria_amparo_bahamon
+    name: "Gloria Amparo Bahamón"
+    image: "./assets/people/gloria_amparo_bahamon.jpeg"
+
   - id: michael_sanchez
     name: "Michael Sánchez"
     image: "./assets/people/michael_sanchez.jpeg"
